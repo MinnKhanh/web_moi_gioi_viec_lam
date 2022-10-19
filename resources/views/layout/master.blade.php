@@ -14,20 +14,23 @@
     <link href="{{ asset('css/app-creative-dark.min.css') }}" rel="stylesheet" type="text/css">
     @stack('css')
     <style>
-        .container {
-            position: relative;
+        .container-spin {
+            position: fixed;
             display: inline-block;
             box-sizing: border-box;
             padding: 30px;
             width: 25%;
             height: 140px;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
         }
 
 
         .circle {
             box-sizing: border-box;
-            width: 80px;
-            height: 80px;
+            width: 5rem;
+            height: 5rem;
             border-radius: 100%;
             border: 10px solid rgba(133, 130, 128, .3);
             border-top-color: yellow;
@@ -69,7 +72,7 @@
 <body class=""
     data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}"
     data-leftbar-theme="dark">
-    <div class="container">
+    <div class="container-spin">
         <div class="circle"></div>
     </div>
 
@@ -126,7 +129,7 @@
     @stack('js')
     <script>
         $(window).on("load", function() {
-            $(".loader-wrapper").fadeOut("slow");
+            $(".container-spin").fadeOut("fast");
         });
     </script>
 
